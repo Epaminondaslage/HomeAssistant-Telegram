@@ -5,10 +5,10 @@
 
 # Índice 
 
-* [Sites relacionados ao Home Assistant e Telegram ](Sites-relacionados-ao-Home-Assistant-e-Telegram)
+* [Sites relacionados ao Home Assistant e Telegram ](#Sites-relacionados-ao-Home-Assistant-e-Telegram)
 * [Introdução](#Introdução)
-* [Repositório Disponível](Repositório-Disponível)    
-* [Status do Projeto](Status-do-Projeto)
+* [Repositório Disponível](#Repositório-Disponível)    
+* [Status do Projeto](#Status-do-Projeto)
 
 # Sites relacionados ao Home Assistant e Telegram
 
@@ -20,7 +20,7 @@
 colocar aqui a documentação
 
 
-## Repositório Disponível  
+# Repositório Disponível  
 
 * <a href="https://github.com/Epaminondaslage/xxxxxxxxxxxxxxxx">xxxxxxxxxxxxxxxxxxxxxxxxxx)</a> 
 
