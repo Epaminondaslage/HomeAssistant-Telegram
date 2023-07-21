@@ -5,16 +5,12 @@
 <p><strong><span style="color: #0000ff;">Rodrigo César Luz Brochado</span></strong></p>
 <a href="https://br.linkedin.com/in/rodrigobrochado"> Linkedin Rodrigo Brochado</a>
 
-- [Sites relacionados ao Home Assistant e Telegram ](#Sites-relacionados-ao-Home-Assistant-e-Telegram)
+# Indice
+
 - [Introdução](#Introdução)
 - [Instalação](#Instalação)
+- [Sites relacionados ao Home Assistant e Telegram ](#Sites-relacionados-ao-Home-Assistant-e-Telegram)
 - [Status do Projeto](#Status-do-Projeto)
-
-# Sites relacionados ao Home Assistant e Telegram
-
-- Documentação oficial da integração do Telegram com Home assistant: https://www.home-assistant.io/integrations/telegram/
-- Documentação oficial dos serviços de notificação do Telegram com Home assistant: https://www.home-assistant.io/integrations/telegram_bot
-- Documentação do **node-red-contrib-home-assistant-websocket** (modulo do Home Assistant para Node RED): https://zachowj.github.io/node-red-contrib-home-assistant-websocket/guide/
 
 # Introdução
 
@@ -156,6 +152,14 @@ Bla bla bla bla bla
 Bla bla bla bla bla
 
 ![Flow Telegram](./imagens/Flow_Telegram.png)
+
+
+# Sites relacionados ao Home Assistant e Telegram
+
+- Documentação oficial da integração do Telegram com Home assistant: https://www.home-assistant.io/integrations/telegram/
+- Documentação oficial dos serviços de notificação do Telegram com Home assistant: https://www.home-assistant.io/integrations/telegram_bot
+- Documentação do **node-red-contrib-home-assistant-websocket** (modulo do Home Assistant para Node RED): https://zachowj.github.io/node-red-contrib-home-assistant-websocket/guide/
+
 
 # Status do Projeto
 
