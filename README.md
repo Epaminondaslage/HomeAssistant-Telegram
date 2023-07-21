@@ -14,7 +14,16 @@
 
 # Introdução
 
-A integração do Telegram é bastante util para controlar e receber eventos do Home Assistant, especialmente quando o usuario esta fora do alcance de sua rede local e nao possui uma VPN. Atraves dela pode-se enviar comandos e receber notificações do Home Assistant em uma conversa do aplicativo Telegram, permitindo o controle e monitoramento remoto das automações. Para facilitar o projeto das automações, este tutorial utiliza o Node RED, uma ferramenta de desenvolvimento baseada em fluxo para programação visual.
+A integração do Telegram com o Home Assistant é de fato uma ótima maneira de controlar e receber notificações das automações, especialmente quando você está fora de sua rede local e não tem uma VPN configurada. O Telegram é um aplicativo de mensagens amplamente utilizado e confiável, o que o torna uma opção popular para esse tipo de integração.
+
+Utilizar o Node-RED para o desenvolvimento das automações é uma escolha inteligente, pois ele oferece uma abordagem visual para a programação, tornando o processo mais intuitivo e acessível para muitos usuários.
+
+Pré-requisitos para a integração do Telegram com o Home Assistant usando o Node-RED:
+
+   *  Ter o Home Assistant instalado e funcionando corretamente.
+   *  Criar um bot no Telegram usando o BotFather e obter o token do bot.
+   *  Ter o Node-RED instalado e configurado em seu Home Assitant.
+   *  Instalar o pacote do Telegram no Node-RED para habilitar a integração.
 
 # Instalação
 
