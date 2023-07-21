@@ -1,0 +1,701 @@
+[
+    {
+        "id": "99edb6a2efcb1ffe",
+        "type": "tab",
+        "label": "Telegram",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "80577e46a1e78587",
+        "type": "server-events",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "server": "dd34a0b0.8b57b",
+        "version": 2,
+        "eventType": "telegram_text",
+        "exposeToHomeAssistant": false,
+        "eventData": "",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "1ea310b2a8858368"
+            ]
+        ]
+    },
+    {
+        "id": "6d28f2b7eb70fd2f",
+        "type": "server-events",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "server": "dd34a0b0.8b57b",
+        "version": 2,
+        "eventType": "telegram_command",
+        "exposeToHomeAssistant": false,
+        "eventData": "",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "1254a95cd96bfcc6",
+                "95448c25fdaad4a9"
+            ]
+        ]
+    },
+    {
+        "id": "2ed1de80db5c0312",
+        "type": "server-events",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "server": "dd34a0b0.8b57b",
+        "version": 2,
+        "eventType": "telegram_callback",
+        "exposeToHomeAssistant": false,
+        "eventData": "",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 170,
+        "y": 560,
+        "wires": [
+            [
+                "a18c01eaea402b27",
+                "58591ce5ac30d6f6",
+                "5aac9daeebd9d8ae"
+            ]
+        ]
+    },
+    {
+        "id": "1254a95cd96bfcc6",
+        "type": "debug",
+        "z": "99edb6a2efcb1ffe",
+        "name": "debug TelegramCommand",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a18c01eaea402b27",
+        "type": "debug",
+        "z": "99edb6a2efcb1ffe",
+        "name": "debug TelegramCallback",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "58591ce5ac30d6f6",
+        "type": "function",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Gera serviço",
+        "func": "msg.action = msg.payload.event.command.slice(1);\nmsg.entities = msg.payload.event.args[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 560,
+        "wires": [
+            [
+                "17c245caa3fbebd0",
+                "68a6a098412f29e8",
+                "63fd72a7a9025ba3"
+            ]
+        ]
+    },
+    {
+        "id": "17c245caa3fbebd0",
+        "type": "debug",
+        "z": "99edb6a2efcb1ffe",
+        "name": "debug CallService action",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "action",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "95448c25fdaad4a9",
+        "type": "switch",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Switch Comando",
+        "property": "payload.event.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/start",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/get_lights",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/get_switches",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "a78a4d158f4b7c89"
+            ],
+            [
+                "5d36b4c2bc84966c"
+            ],
+            [
+                "e43ceca0cb071c10"
+            ]
+        ]
+    },
+    {
+        "id": "5aac9daeebd9d8ae",
+        "type": "function",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Verifica comando",
+        "func": "if (msg.payload.event.args.length == 2){\n    msg.edit = msg.payload.event.args[1];\n}\nelse{\n    msg.edit = \"null\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 620,
+        "wires": [
+            [
+                "eb97e810ec17fded"
+            ]
+        ]
+    },
+    {
+        "id": "71397497e9829a3e",
+        "type": "switch",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Switch comando",
+        "property": "edit",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "get_lights",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "get_switches",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 840,
+        "y": 620,
+        "wires": [
+            [
+                "8728bfb4555df86b"
+            ],
+            [
+                "aade14e0567a36f5"
+            ]
+        ]
+    },
+    {
+        "id": "eb97e810ec17fded",
+        "type": "delay",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 620,
+        "wires": [
+            [
+                "71397497e9829a3e"
+            ]
+        ]
+    },
+    {
+        "id": "5d36b4c2bc84966c",
+        "type": "change",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Configura mensagem lights",
+        "rules": [
+            {
+                "t": "set",
+                "p": "comando",
+                "pt": "msg",
+                "to": "get_lights",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "texto",
+                "pt": "msg",
+                "to": "Here are your lights!!!",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "entidades",
+                "pt": "msg",
+                "to": "[{\"nome\":\"Light 1\",\"entidade\":\"light.virtual_fake_light_1\"},{\"nome\":\"Light 2\",\"entidade\":\"light.virtual_fake_light_2\"},{\"nome\":\"Light 3\",\"entidade\":\"light.virtual_fake_light_3\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 320,
+        "wires": [
+            [
+                "799918b2ca12d599"
+            ]
+        ]
+    },
+    {
+        "id": "799918b2ca12d599",
+        "type": "function",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Gera mensagem",
+        "func": "function mapKeyboard(ent) {\n  const state = global\n    .get(`homeassistant.homeAssistant.states['${ent.entidade}'].state`)\n    .toUpperCase();\n\n  return `${ent.nome} - ${state}:/turn_${state == \"ON\" ? \"off\" : \"on\"} ${\n    ent.entidade\n    } ${msg.comando}`;\n}\n\nmsg.text = {\n  message: msg.texto,\n  inline_keyboard: msg.entidades.map(mapKeyboard),\n  message_tag: `msg_${msg.comando}`,\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nconst entities = ['switch.virtual_fake_switch_1', 'switch.virtual_fake_switch_2', 'switch.virtual_fake_switch_3']",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 320,
+        "wires": [
+            [
+                "0a01ea52e4e7c67e",
+                "95f7988c4fedc34b"
+            ]
+        ]
+    },
+    {
+        "id": "e43ceca0cb071c10",
+        "type": "change",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Configura mensagem switches",
+        "rules": [
+            {
+                "t": "set",
+                "p": "comando",
+                "pt": "msg",
+                "to": "get_switches",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "texto",
+                "pt": "msg",
+                "to": "Here are your switches!!!",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "entidades",
+                "pt": "msg",
+                "to": "[{\"nome\":\"Switch 1\",\"entidade\":\"switch.virtual_fake_switch_1\"},{\"nome\":\"Switch 2\",\"entidade\":\"switch.virtual_fake_switch_2\"},{\"nome\":\"Switch 3\",\"entidade\":\"switch.virtual_fake_switch_3\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 380,
+        "wires": [
+            [
+                "799918b2ca12d599"
+            ]
+        ]
+    },
+    {
+        "id": "1ea310b2a8858368",
+        "type": "debug",
+        "z": "99edb6a2efcb1ffe",
+        "name": "debug TelegramText",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d55a150456408ab4",
+        "type": "function",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Edita mensagem",
+        "func": "function mapKeyboard(ent) {\n  const state = global\n    .get(`homeassistant.homeAssistant.states['${ent.entidade}'].state`)\n    .toUpperCase();\n\n  return `${ent.nome} - ${state}:/turn_${state == \"ON\" ? \"off\" : \"on\"} ${\n    ent.entidade\n    } ${msg.comando}`;\n}\n\nmsg.text = {\n  message_id: msg.payload.event.message.message_id,\n  chat_id: msg.payload.event.message.chat.id,\n  inline_keyboard: msg.entidades.map(mapKeyboard),\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nconst entities = ['switch.virtual_fake_switch_1', 'switch.virtual_fake_switch_2', 'switch.virtual_fake_switch_3']",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 620,
+        "wires": [
+            [
+                "e9fce05768f6be19",
+                "5594631ca49364c6"
+            ]
+        ]
+    },
+    {
+        "id": "8728bfb4555df86b",
+        "type": "change",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Configura ediçao lights",
+        "rules": [
+            {
+                "t": "set",
+                "p": "comando",
+                "pt": "msg",
+                "to": "get_lights",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "entidades",
+                "pt": "msg",
+                "to": "[{\"nome\":\"Light 1\",\"entidade\":\"light.virtual_fake_light_1\"},{\"nome\":\"Light 2\",\"entidade\":\"light.virtual_fake_light_2\"},{\"nome\":\"Light 3\",\"entidade\":\"light.virtual_fake_light_3\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 620,
+        "wires": [
+            [
+                "d55a150456408ab4"
+            ]
+        ]
+    },
+    {
+        "id": "aade14e0567a36f5",
+        "type": "change",
+        "z": "99edb6a2efcb1ffe",
+        "name": "Configura ediçao switches",
+        "rules": [
+            {
+                "t": "set",
+                "p": "comando",
+                "pt": "msg",
+                "to": "get_switches",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "entidades",
+                "pt": "msg",
+                "to": "[{\"nome\":\"Switch 1\",\"entidade\":\"switch.virtual_fake_switch_1\"},{\"nome\":\"Switch 2\",\"entidade\":\"switch.virtual_fake_switch_2\"},{\"nome\":\"Switch 3\",\"entidade\":\"switch.virtual_fake_switch_3\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 680,
+        "wires": [
+            [
+                "d55a150456408ab4"
+            ]
+        ]
+    },
+    {
+        "id": "0a01ea52e4e7c67e",
+        "type": "debug",
+        "z": "99edb6a2efcb1ffe",
+        "name": "debug GeraMensagem",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "text",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e9fce05768f6be19",
+        "type": "debug",
+        "z": "99edb6a2efcb1ffe",
+        "name": "debug EditaMensagem",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "text",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1610,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "68a6a098412f29e8",
+        "type": "api-call-service",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "server": "dd34a0b0.8b57b",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "homeassistant",
+        "service": "{{action}}",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{entities}}"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 810,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a78a4d158f4b7c89",
+        "type": "api-call-service",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "server": "dd34a0b0.8b57b",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "telegram_bot",
+        "service": "send_message",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Hello! I'm a friendly Home Assistant bot made by Rodrigo. Currently I can only tell you the state of your fake lights and turn them on or off if you want.\",\"message_tag\":\"msg_start\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 800,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95f7988c4fedc34b",
+        "type": "api-call-service",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "server": "dd34a0b0.8b57b",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "telegram_bot",
+        "service": "send_message",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "text",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5594631ca49364c6",
+        "type": "api-call-service",
+        "z": "99edb6a2efcb1ffe",
+        "name": "",
+        "server": "dd34a0b0.8b57b",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "telegram_bot",
+        "service": "edit_replymarkup",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "text",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1630,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63fd72a7a9025ba3",
+        "type": "debug",
+        "z": "99edb6a2efcb1ffe",
+        "name": "debug CallService entities",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "entities",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "dd34a0b0.8b57b",
+        "type": "server",
+        "name": "Home Assistant",
+        "addon": true
+    }
+]
