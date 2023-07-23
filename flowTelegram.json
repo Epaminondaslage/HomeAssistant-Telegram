@@ -613,7 +613,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"message\":\"Hello! I'm a friendly Home Assistant bot made by Rodrigo. Currently I can only tell you the state of your fake lights and turn them on or off if you want.\",\"message_tag\":\"msg_start\"}",
+        "data": "{\"message\":\"Hello! I'm a friendly Home Assistant bot made by Rodrigo. How can I help you?\",\"message_tag\":\"msg_start\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
