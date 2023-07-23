@@ -199,7 +199,11 @@ O exemplo a seguir cria um fluxo onde um comando pré-definido é avaliado no no
 
 ![Alt text](imagens/exemplos/exemplo-inline_keyboard_final.png)
 
-Abaixo seguem as configurações referentes aos nodos **switch**, **change** e **function**, assim como o acionamento do serviço **telegram_bot.send_message**. O nodo **change** _Configura mensagem_ configura os parametros da mensagem de forma que possam ser facilmente editados e replicados, enquanto o nodo **function** _Gera mensagem_ em seguida formata essa mensagem para que esteja de acordo com o que o **telegram_bot.send_message** espera receber. 3 parametros de configuração são definidos em _Configura mensagem_: **msg.comando** espera uma string que identifique o comando recebido, isso sera importante na proxima subseção; **msg.texto** espera uma string a ser enviada no corpo da mensagem (no exemplo acima, ela é "Here are your lights!!!"); **msg.entidades** espera um JSON contendo uma lista de objetos, cada um contendo os campos **nome** e **entidade** (_nome_ é o nome que sera mostrado no botão do Inline Keyboard, _entidade_ é a entidade que devera ser associada a ele).
+Abaixo seguem as configurações referentes aos nodos **switch**, **change** e **function**, assim como o acionamento do serviço **telegram_bot.send_message**. O nodo **change** _Configura mensagem_ configura os parametros da mensagem de forma que possam ser facilmente editados e replicados, enquanto o nodo **function** _Gera mensagem_ em seguida formata essa mensagem para que esteja de acordo com o que o **telegram_bot.send_message** espera receber. 3 parametros de configuração são definidos em _Configura mensagem_:
+
+- **msg.comando**: espera uma string que identifique o comando recebido, isso sera importante na proxima subseção;
+- **msg.texto**: espera uma string a ser enviada no corpo da mensagem (no exemplo acima, ela é "Here are your lights!!!");
+- **msg.entidades**: espera um JSON contendo uma lista de objetos, cada um contendo os campos **nome** e **entidade** (_nome_ é o nome que sera mostrado no botão do Inline Keyboard, _entidade_ é a entidade que devera ser associada a ele).
 
 ![Alt text](imagens/final/config-switch-comando.png)
 
