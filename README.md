@@ -1,4 +1,4 @@
-<td style="width: 20%;"><img src="/img/top_ha_telegram.png" width="100%" /></td>
+<td style="width: 20%;"><img src="/imagens/top_ha_telegram.png" width="100%" /></td>
 
 # Indice
 
