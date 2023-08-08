@@ -11,7 +11,7 @@
 
 O Telegram é um aplicativo de mensagens instantâneas, criado por Pavel Durov e sua equipe, que foi lançado em 2013. Ele é projetado para permitir que os usuários troquem mensagens de texto, voz, vídeo, imagens e outros tipos de arquivos de forma rápida e segura. O Telegram é conhecido por sua forte ênfase na privacidade e segurança das comunicações.
 
-## Algumas características distintivas do Telegram incluem:
+## Algumas características do Telegram incluem:
 
 - Criptografia: O Telegram oferece criptografia de ponta a ponta opcional em suas conversas, o que significa que somente os remetentes e destinatários das mensagens podem lê-las. Além disso, eles também oferecem chats secretos com autodestruição de mensagens após um tempo determinado.
 - Grupos e Canais: O Telegram permite a criação de grupos de chat com até milhares de membros e canais para transmitir informações a um público mais amplo.
@@ -22,6 +22,18 @@ O Telegram é um aplicativo de mensagens instantâneas, criado por Pavel Durov e
 - Sem Anúncios: O Telegram é conhecido por não exibir anúncios em sua plataforma, o que o diferencia de muitos outros aplicativos de mensagens.
 
 O Telegram tem sido popular por sua abordagem focada na privacidade e por oferecer recursos exclusivos. No entanto, é importante notar que, como em qualquer plataforma, os usuários devem estar cientes das práticas de segurança e privacidade ao compartilhar informações sensíveis.
+
+## Bots
+
+No Telegram, os bots são contas automatizadas que podem executar uma variedade de tarefas e interações dentro do aplicativo. Eles são programados para responder a comandos específicos, mensagens ou eventos, oferecendo funcionalidades extras e automatizadas aos usuários. Os bots podem ser usados para uma ampla gama de finalidades, desde fornecer informações úteis até entretenimento e interações personalizadas. No nosso caso podemos realizar bots para :
+
+- Monitoramento e Alertas: Bots podem acompanhar eventos específicos, como mudanças em sensores, acionamento de dispositivos, condições meteorológicas etc., e notificar os usuários quando algo relevante acontecer.
+- Automação de Tarefas: Os bots podem executar tarefas automatizadas, como acionar eventos no Home Assistant, criar notificações, reportar alertas de alarmes, etc.
+- Integrações com Serviços: Alguns bots podem interagir com serviços externos, como Google Drive, GitHub, Trello, etc., para realizar ações específicas.
+
+Para interagir com um bot no Telegram, os usuários geralmente precisam digitar comandos predefinidos na caixa de mensagem. Por exemplo, um bot de tradução pode ser ativado digitando /alarm seguido do texto que você deseja verificar o status. Os bots também podem responder a mensagens específicas, como solicitações de informações ou ações. A resposta do bot pode ser texto simples, imagens, links ou qualquer outra mídia suportada pelo Telegram.
+
+## Integraçao Telegram-Home Assistant
 
 A integração do Telegram com o Home Assistant é de fato uma ótima maneira de controlar e receber notificações das automações, especialmente quando você está fora de sua rede local e não tem uma VPN configurada. O Telegram é um aplicativo de mensagens amplamente utilizado e confiável, o que o torna uma opção popular para esse tipo de integração.
 
